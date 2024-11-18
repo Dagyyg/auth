@@ -321,6 +321,7 @@ hr {
       const submitFaceScanBtn = document.getElementById("submitFaceScan");
       const retryFaceScanBtn = document.getElementById("retryFaceScan");
       const completeButton = document.getElementById("completeButton");
+      let allContainer = document.getElementsByClassName("container")[0];
       let stream;
       let isFaceScanning = false;
       let capturedImage;
@@ -332,7 +333,8 @@ hr {
       submitFaceScanBtn.addEventListener("click", submitFaceScan);
       retryFaceScanBtn.addEventListener("click", retryFaceScan);
       completeButton.addEventListener("click", () =>
-        window.location.href = "/done"
+
+        allContainer.innerHTML = "<div>You have successfully Registered. We will reach out soon!</div>"
       );
 
       function updateCompleteButton() {
